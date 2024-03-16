@@ -84,3 +84,23 @@ values
 (1, 'Name1', null, 'True', current_timestamp(), current_timestamp()), 
 (2, 'Name2', null, 'false', current_timestamp(), current_timestamp());
 ```
+
+## Use Commands
+
+```
+USE ROLE ACCOUNTADMIN;
+USE DATABASE DEMO;
+USE SCHEMA PUBLIC;
+USE WAREHOUSE LOAD_WH;
+```
+
+
+```
+
+SHOW GRANTS ON DATABASE LAB_DB;
+SHOW GRANTS ON SCHEMA LAB_SCHEMA;
+SHOW GRANTS TO USER <user-name>;
+
+grant usage on database <database_name> to role <role_name>;
+grant usage on schema <database_name>.<schema_name>;
+```
