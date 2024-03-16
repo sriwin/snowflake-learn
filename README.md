@@ -1,11 +1,17 @@
 # Snowflake Learn
 
 ## Snowflake Step
-. Create Account & Activate
-. Login to Snowflake
-. Change the role to accountadmin
-. start the default warehour
-. create database
+
+| #     | Step Name | Notes    |
+| :-----: | :--- | :--- |
+| 1 | Create Account & Activate   | use gmail and NA   |
+| 2 | Login to Snowflake   |    |
+| 3 | Change the role to accountadmin |  USE ROLE ACCOUNTADMIN;  or click on the user name -> Switch Role -> Change to Account Admin|
+| 4 | Start default warehoure|  Click on Admin -> Warehours -> 3 dots => edit -> Save  |
+|5| create database|
+|6| create schema|
+|7| create table|
+|8| Insert into table|
 .
 
 
