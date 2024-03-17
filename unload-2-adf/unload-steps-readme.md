@@ -90,11 +90,29 @@ date_format='auto' timestamp_format='auto';
 #### Command : Create Stage
 
 ```
-create or replace stage <stage-name>
+create or replace stage "<database_name>"."<schema_name>"."<stage_name>"
  STORAGE_INTEGRATION = <storage-integration-name>
  URL = 'azure://<strg-name>.blob.core.windows.net/<cntnr-name>/raw1/'
  FILE_FORMAT = sf_unload_2_adf_csv_file_format;
 ```
 
+#### Command : Copy Into CSV
 
+- This command will copy the data from snowflake to Azure in compressed format
+
+```
+COPY INTO @<stage-name>
+from (select top 10 * from users) 
+FILE_FORMAT = (FORMAT_NAME = sf_unload_2_adf_csv_file_format)
+OVERWRITE=TRUE;
+```
+
+#### Command : Copy Into Parquet
+
+```
+COPY INTO @sf_unload_2_adf_stage 
+from (select top 10 * from users)
+file_format = (type = 'parquet')
+header = true overwrite = true;
+```
 
