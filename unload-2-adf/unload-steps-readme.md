@@ -95,6 +95,28 @@ create or replace stage "<database_name>"."<schema_name>"."<stage_name>"
  URL = 'azure://<strg-name>.blob.core.windows.net/<cntnr-name>/raw1/'
  FILE_FORMAT = sf_unload_2_adf_csv_file_format;
 ```
+#### Command : Copy Into Params
+
+- HEADER = FALSE 
+  - default it is set to TRUE, you can change it to FALSE if you do not want column names of a header on the output file.
+- file_format = (type=CSV COMPRESSION = BZ2)
+  -  default, it unloads a file into GZIP format
+  -  AUTO | GZIP | BZ2 | BROTLI | ZSTD | DEFLATE | RAW_DEFLATE | NONE
+-  file_format = (type=CSV COMPRESSION = NONE FIELD_DELIMITER='|')
+  - default it used ‘,’ character   
+- file_format = (type=CSV COMPRESSION = NONE RECORD_DELIMITER='\n\r')
+- file_format = (type=CSV COMPRESSION = NONE FILE_EXTENSION='TXT');
+- file_format = (type=CSV COMPRESSION = NONE NULL_IF=(''))
+  - Converts a value to NULL
+- file_format = (type=CSV COMPRESSION = NONE EMPTY_FIELD_AS_NULL='')
+  - Changes empty field to null
+- file_format = (type=CSV COMPRESSION = NONE DATE_FORMAT='MM-DD-YYYY')
+  - Change Date to a specified format
+  - By default date columns outputs in ‘YYYY-MM-DD‘,
+- file_format = (type=CSV COMPRESSION = NONE TIME_FORMAT='HH24:MI:SS')
+  - By default time columns outputs in ‘HH24:MI:SS ‘
+- file_format = (type=CSV COMPRESSION = NONE TIMESTAMP_FORMAT='MM-DD-YYYY HH24:MI:SS.FF3 TZHTZM')
+  - By default timestamp columns outputs in ‘YYYY-MM-DD HH24:MI:SS.FF3 TZHTZM‘,    
 
 #### Command : Copy Into CSV
 
@@ -116,10 +138,12 @@ file_format = (type = 'parquet')
 header = true overwrite = true;
 ```
 
+
+
 ## References
 ### File format Type Options
-|Format Type Option|Description|
-| :---:   | :--- |
+|Format Type Option|Description|Notes
+| :---:   | :--- | :--- |
 |COMPRESSION|AUTO or GZIP or BZ2 or BROTLI or ZSTD or DEFLATE or RAW_DEFLATE or NONE|
 |RECORD_DELIMITER |‘<character>’ or NONE|
 |FIELD_DELIMITER|‘<character>’ or NONE|
