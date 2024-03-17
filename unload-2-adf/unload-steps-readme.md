@@ -65,7 +65,7 @@ DESC STORAGE INTEGRATION sf_unload_2_adf;
 - Steps
   - Add a new role assignment under the Access Control (IAM) pane from within the storage container
 | # |App| Type    | Notes   |
-| :---:   | :--- | :--- |:--- |
+| :---:   | :--- | :--- |
 |1|Azure|Login to Azure|
 |2|Azure|Go to Storage account|
 |3|Azure|Click on Access Control (IAM)|
