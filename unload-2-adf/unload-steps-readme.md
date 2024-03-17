@@ -64,14 +64,14 @@ DESC STORAGE INTEGRATION sf_unload_2_adf;
 - Grant the Azure Service Principal the Desired Access to Each Storage Container
 - Steps
   - Add a new role assignment under the Access Control (IAM) pane from within the storage container
-| # |App| Type    | Notes   |
-| :---:   | :--- | :--- |
-|1|Azure|Login to Azure|
-|2|Azure|Go to Storage account|
-|3|Azure|Click on Access Control (IAM)|
-|4|Azure|Click on Add -> Add Role Assignment|
-|5|Azure|Add Contributor role|Storage Blob Data Contributor
-|6|Azure|grant access to service principal |<ul><li>get the snowflake service principal name from Azure AD -> Enterprise
+| # | App | Type | Notes |
+| :---:   | :--- | :--- |:--- |
+|1|Azure|Login to Azure||
+|2|Azure|Go to Storage account||
+|3|Azure|Click on Access Control (IAM)||
+|4|Azure|Click on Add -> Add Role Assignment||
+|5|Azure|Add Contributor role|Storage Blob Data Contributor|
+|6|Azure|grant access to service principal |<ul><li>get the snowflake service principal name from Azure AD -> Enterprise |
 
 #### Command : Create Stage
 
