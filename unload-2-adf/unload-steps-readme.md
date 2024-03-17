@@ -64,6 +64,8 @@ DESC STORAGE INTEGRATION sf_unload_2_adf;
 - Grant the Azure Service Principal the Desired Access to Each Storage Container
 - Steps
   - Add a new role assignment under the Access Control (IAM) pane from within the storage container
+ 
+  
 | # | App | Type | Notes |
 | :---:   | :--- | :--- |:--- |
 |1|Azure|Login to Azure||
