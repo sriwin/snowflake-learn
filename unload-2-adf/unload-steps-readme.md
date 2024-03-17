@@ -8,7 +8,7 @@
 | :---:   | :--- | :--- |:--- |
 |1|Azure|Create a storage account in Azure|
 |2|Snowflake|Create Storage Integration| Refer "Command : STORAGE INTEGRATION" below
-|3|Snowflake|Run Describe command to Authorize| Refer Command : DESCRIBE INTEGRATION" below
+|3|Snowflake|Run Describe command to Authorize Snowflake in Azure| Refer Command : DESCRIBE INTEGRATION" below
 |4|Azure|Grant Access in Azure to Snowflake for storage | Refer to "Command : Grant Access to Azure Storage for Snowflake"
 |5|Snowflake|Test the above steps|
 
