@@ -116,3 +116,61 @@ file_format = (type = 'parquet')
 header = true overwrite = true;
 ```
 
+## References
+### File format Type Options
+|Format Type Option|Description|
+| :---:   | :--- |
+|COMPRESSION|AUTO or GZIP or BZ2 or BROTLI or ZSTD or DEFLATE or RAW_DEFLATE or NONE|
+|RECORD_DELIMITER |‘<character>’ or NONE|
+|FIELD_DELIMITER|‘<character>’ or NONE|
+|FILE_EXTENSION|‘<string>’|
+|SKIP_HEADER|<integer>|
+|SKIP_BLANK_LINES|TRUE or FALSE|
+|DATE_FORMAT|‘<string>’ or AUTO|
+|TIME_FORMAT|‘<string>’ or AUTO|
+|TIMESTAMP_FORMAT|‘<string>’ or AUTO|
+|BINARY_FORMAT|HEX or BASE64 or UTF8|
+|ESCAPE|‘<character>’ or NONE|
+|ESCAPE_UNENCLOSED_FIELD|‘<character>’ or NONE|
+|TRIM_SPACE|TRUE or FALSE|
+|FIELD_OPTIONALLY_ENCLOSED_BY|‘<character>’ or NONE|
+|NULL_IF|( ‘<string>’ [ , ‘<string>’ … ] )|
+|ERROR_ON_COLUMN_COUNT_MISMATCH|TRUE or FALSE|
+|REPLACE_INVALID_CHARACTERS|TRUE or FALSE|
+|VALIDATE_UTF8|TRUE or FALSE|
+|EMPTY_FIELD_AS_NULL|TRUE or FALSE|
+|SKIP_BYTE_ORDER_MARK|TRUE or FALSE|
+|ENCODING|‘<string>’ or UTF8|
+
+
+### Snowflake File format Support
+
+|Format Type Option|Snowflake-Load|Snowflake-Unload
+| :---:   | :---: | :---: |
+|Avro|Yes|No
+|Orc|Yes|No
+|XML|Yes|No
+
+### Alter
+ALTER FILE FORMAT [ IF EXISTS ] <name> RENAME TO <new_name>
+
+ALTER FILE FORMAT file_format_name  SET 
+   FIELD_DELIMITER = ','
+   SKIP_HEADER  = 1
+
+
+### Show
+SHOW FILE FORMATS
+SHOW FILE FORMATS in database_name.schema_name
+
+### Clone
+
+CREATE [ OR REPLACE ] { STAGE | FILE FORMAT | SEQUENCE | TASK } [ IF NOT EXISTS ] <object_name>
+  CLONE <source_object_name>
+
+### Describe
+desc file format file_format_name;
+
+### Drop
+DROP File Format File_format_name
+
