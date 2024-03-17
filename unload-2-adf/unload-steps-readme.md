@@ -74,14 +74,26 @@ DESC STORAGE INTEGRATION sf_unload_2_adf;
 |4|Azure|Click on Add -> Add Role Assignment||
 |5|Azure|Add Contributor role|Storage Blob Data Contributor|
 |6|Azure|grant access to service principal |<ul><li>get the snowflake service principal name from Azure AD -> Enterprise |
+|7|Snowflake|Create File Format||
+|8|Snowflake|Create Stage||
+
+#### Command : Create File Format
+
+```
+create or replace file format sf_unload_2_adf_csv_file_format
+type = csv field_delimiter=',' record_delimiter='\n'
+field_optionally_enclosed_by='"' compression='auto'
+skip_header=0 null_if=('')
+date_format='auto' timestamp_format='auto';
+```
 
 #### Command : Create Stage
 
 ```
-create or replace stage <stage name>
-  storage_integration = <storage integration name>
-  url = 'azure://<storage account>.blob.core.windows.net/<storage container>/'
-;
+create or replace stage <stage-name>
+ STORAGE_INTEGRATION = <storage-integration-name>
+ URL = 'azure://<strg-name>.blob.core.windows.net/<cntnr-name>/raw1/'
+ FILE_FORMAT = sf_unload_2_adf_csv_file_format;
 ```
 
 
