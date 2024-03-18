@@ -4,7 +4,7 @@
 
 | #     | Step Name | Notes    |
 | :-----: | :--- | :--- |
-| 1 | Create Account & Activate   | use gmail and NA   |
+| 1 | Create Account & Activate   | <ul><li>use gmail and NA</li><li>Refer Account Section below</li></ul>   |
 | 2 | Login to Snowflake   |    |
 | 3 | Change the role to accountadmin |  USE ROLE ACCOUNTADMIN;  or click on the user name -> Switch Role -> Change to Account Admin|
 | 4 | Start default warehoure|  Click on Admin -> Warehours -> 3 dots => edit -> Save  |
@@ -13,6 +13,27 @@
 |7| create table|
 |8| Insert into table|
 .
+
+## Account
+- Snowflake account wil have the below
+
+| #     | Info | Notes    |
+| :---: | :--- | :--- |
+|1|Users|
+|2|Roles|
+|3|Warehouses|
+|4|Resources Monitor|
+|5|Integration|
+|6|Databases|
+|7|Shared Objects|
+
+
+
+  
+
+## Container Theory
+
+
 
 
 ## Create Warehouse (Compute Engine/Server)
@@ -23,9 +44,11 @@ CREATE WAREHOUSE LAB_WAREHOUSE WITH WAREHOUSE_SIZE = 'XSMALL' WAREHOUSE_TYPE = '
 
 ## Create Database
 
-    Create a Permanent Database
-    Create a Transient Database
-    Create a Database Replication
+- Databases can contain may schemas
+
+Create a Permanent Database
+Create a Transient Database
+Create a Database Replication
 
 
 ```
@@ -42,12 +65,34 @@ use LAB_DB;
 ```
 
 ## Create Schema
+- A Schema can contain
+  - tables
+  - external tables
+  - views
+  - Stored Procedure
+  - Sequence
+  - Stage
+  - File Formats
+  - Pipe
+  - Stream
+  - Task
+  - UDF
 
 ```
 Create schema schema-name;
 ```
 
 ## Create Tables
+- Types of Tables in Snowflake
+
+| #   | Type | Notes    |
+| :---: | :--- | :--- |
+|1|Permanent Table|
+|2|Temporary Table|
+|3|Transient Table|
+|4|External Table|
+
+
 
 ```
 create table LAB_DB.lab_schema.users (
